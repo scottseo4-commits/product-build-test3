@@ -69,7 +69,27 @@ class LottoBall extends HTMLElement {
   document.addEventListener('DOMContentLoaded', () => {
     const generateBtn = document.getElementById('generate-btn');
     const lottoGamesContainer = document.getElementById('lotto-games-container');
+    const themeToggle = document.getElementById('theme-toggle');
+    const modeIcon = themeToggle.querySelector('.mode-icon');
   
+    // 테마 전환 기능
+    const currentTheme = localStorage.getItem('theme') || 'dark'; // 기본값 다크모드
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    updateThemeIcon(currentTheme);
+
+    themeToggle.addEventListener('click', () => {
+      let theme = document.documentElement.getAttribute('data-theme');
+      let newTheme = theme === 'dark' ? 'light' : 'dark';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    });
+
+    function updateThemeIcon(theme) {
+      modeIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
+    }
+
     const generateLotto = () => {
       lottoGamesContainer.innerHTML = '';
       for (let i = 0; i < 5; i++) {
