@@ -151,6 +151,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 키보드 단축키 추가 (Enter, Space)
   window.addEventListener('keydown', (e) => {
+    // 입력 필드(input, textarea)에서 타이핑 중일 때는 단축키 작동 방지
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+      return;
+    }
+
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       generateBtn.click();

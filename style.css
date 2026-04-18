@@ -142,6 +142,87 @@ h1 {
     color: var(--plus-color);
 }
 
+.partnership-section {
+    margin-top: 50px;
+    padding-top: 20px;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: var(--plus-color);
+    margin-bottom: 30px;
+    opacity: 0.3;
+}
+
+.partnership-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--header-color);
+}
+
+.form-desc {
+    font-size: 0.9rem;
+    color: var(--subtitle-color);
+    margin-bottom: 25px;
+}
+
+.partnership-form {
+    text-align: left;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--plus-color);
+    border-radius: 8px;
+    background-color: var(--game-bg);
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #f8a500;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: var(--text-color);
+    color: var(--container-bg);
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 20px;
