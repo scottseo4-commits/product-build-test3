@@ -70,7 +70,7 @@ class LottoBall extends HTMLElement {
     const generateBtn = document.getElementById('generate-btn');
     const lottoGamesContainer = document.getElementById('lotto-games-container');
   
-    generateBtn.addEventListener('click', () => {
+    const generateLotto = () => {
       lottoGamesContainer.innerHTML = '';
       for (let i = 0; i < 5; i++) {
         const gameContainer = document.createElement('div');
@@ -110,6 +110,16 @@ class LottoBall extends HTMLElement {
         }, (i * 7 + 6) * 100);
   
         lottoGamesContainer.appendChild(gameContainer);
+      }
+    };
+
+    generateBtn.addEventListener('click', generateLotto);
+
+    // 키보드 단축키 추가 (Enter, Space)
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault(); // 스페이스바 클릭 시 페이지 스크롤 방지
+        generateBtn.click(); // 버튼 클릭 시뮬레이션
       }
     });
   });
