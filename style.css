@@ -147,6 +147,17 @@ h1 {
     padding-top: 20px;
 }
 
+.comment-section {
+    margin-top: 50px;
+    padding-top: 20px;
+}
+
+.comment-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--header-color);
+}
+
 .divider {
     border: 0;
     height: 1px;
